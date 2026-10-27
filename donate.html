@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate Blood | Blood Donation Portal</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="drop"></span> Blood Donation Portal</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="find-donor.html">Find Donor</a>
+      <a href="donate.html" class="active">Donate Blood</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">Donate Blood</h1>
+  <p class="page-sub">Record a blood donation. Every record is added to the blood group wise collection table in the admin panel.</p>
+
+  <div id="notice" class="notice"></div>
+
+  <div class="grid cols-2">
+    <div class="card">
+      <h2>Donation Details</h2>
+      <form id="donateForm">
+        <div class="form-grid">
+          <div class="field full">
+            <label for="registeredDonor">Select a Registered Donor (optional)</label>
+            <select id="registeredDonor"></select>
+          </div>
+          <div class="field">
+            <label for="donorName">Donor Name *</label>
+            <input type="text" id="donorName" required placeholder="Full name">
+          </div>
+          <div class="field">
+            <label for="bloodGroup">Blood Group *</label>
+            <select id="bloodGroup" required></select>
+          </div>
+          <div class="field">
+            <label for="amountMl">How Much Blood Do You Want to Donate? (ml) *</label>
+            <select id="amountMl" required></select>
+            <small style="color:var(--muted);font-size:12px">A standard donation is 350 ml or 450 ml (450 ml = 1 unit).</small>
+          </div>
+          <div class="field hidden" id="customMlWrap">
+            <label for="customMl">Enter Quantity (ml) *</label>
+            <input type="number" id="customMl" min="100" max="600" step="10" placeholder="e.g. 300">
+          </div>
+          <div class="field">
+            <label for="date">Donation Date *</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="field">
+            <label for="city">City *</label>
+            <input type="text" id="city" required placeholder="e.g. Kochi">
+          </div>
+          <div class="field">
+            <label for="camp">Camp / Hospital</label>
+            <input type="text" id="camp" placeholder="e.g. City Blood Bank">
+          </div>
+          <div class="field">
+            <label for="contact">Contact Number</label>
+            <input type="tel" id="contact" placeholder="10 digit number">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Submit Donation</button>
+          <button type="reset" class="btn ghost">Clear</button>
+        </div>
+      </form>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>Eligibility Checklist</h2>
+        <ul class="page-sub" style="padding-left:20px;margin:0">
+          <li>Age between 18 and 65 years.</li>
+          <li>Body weight above 50 kg.</li>
+          <li>Haemoglobin level at least 12.5 g/dL.</li>
+          <li>At least 3 months gap since the last donation.</li>
+          <li>No fever or infection in the last 2 weeks.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Blood Collected Today</h2>
+        <div class="stat" style="border:none;padding:0;box-shadow:none">
+          <div class="value" id="todayMl">0 ml</div>
+          <div class="label">across all blood groups</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Recent Donations</h2>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Date</th><th>Donor</th><th>Blood Group</th><th>Quantity (ml)</th><th>City</th><th>Camp / Hospital</th></tr>
+        </thead>
+        <tbody id="recentDonations"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Blood Donation Portal &copy; 2026 &mdash; Every drop counts.
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/donate.js"></script>
+</body>
+</html>

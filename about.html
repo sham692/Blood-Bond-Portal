@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about Blood Bond's mission, blood donation, and community-driven donor connections.">
+  <title>About Blood Bond | Blood Donation Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-page-hero { margin-bottom: 38px; text-align: center; }
+    .about-page-hero h1 { max-width: 760px; margin: 0 auto 12px; }
+    .about-page-hero p { max-width: 760px; margin: 0 auto; }
+    .about-page-section { margin: 42px 0; }
+    .about-page-heading { max-width: 760px; margin: 0 auto 22px; text-align: center; }
+    .about-page-heading h2 { margin: 0 0 8px; font-size: clamp(24px, 3vw, 32px); }
+    .about-page-heading p { margin: 0; color: var(--muted); }
+    .education-grid, .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .education-card, .purpose-card, .about-pillar {
+      padding: 22px;
+      background: var(--white);
+      border: 1px solid #f1d7da;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(220, 53, 69, .1);
+    }
+    .education-icon, .purpose-icon, .pillar-icon {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 27px;
+    }
+    .education-card h3, .purpose-card h3, .about-pillar h3 {
+      margin: 0 0 8px;
+      color: var(--red-dark);
+      font-size: 17px;
+    }
+    .education-card p, .purpose-card p, .about-pillar p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .purpose-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .purpose-card { background: linear-gradient(145deg, #fff 0%, #fff5f5 100%); }
+    .pillars-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .about-pillar { border-color: var(--line); }
+    .about-page-note {
+      margin: 18px 0 0;
+      padding: 14px 16px;
+      color: #71353a;
+      background: #fff1f2;
+      border-left: 4px solid var(--red);
+      border-radius: 8px;
+      font-size: 13px;
+    }
+    .about-footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 8px; }
+    .about-footer-links a { color: var(--red-dark); font-weight: 600; text-decoration: none; }
+    .about-footer-links a:hover { text-decoration: underline; }
+    @media (max-width: 760px) {
+      .education-grid, .purpose-grid { grid-template-columns: 1fr; }
+      .pillars-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 420px) {
+      .pillars-grid { grid-template-columns: 1fr; }
+      .education-card, .purpose-card, .about-pillar { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="drop"></span> Blood Donation Portal</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="register.html">Registration</a>
+        <a href="find-donor.html">Find Donor</a>
+        <a href="donate.html">Donate Blood</a>
+        <a href="about.html" class="active" aria-current="page">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero about-page-hero">
+      <span class="hero-eyebrow">Saving lives together</span>
+      <h1>About Blood Bond Portal</h1>
+      <p>Empowering Communities &amp; Saving Lives Every Second Through Smart Donation Technology.</p>
+    </section>
+
+    <section class="about-page-section" aria-labelledby="mattersHeading">
+      <header class="about-page-heading">
+        <span class="section-kicker">The difference a donor makes</span>
+        <h2 id="mattersHeading">Why Blood Donation Matters</h2>
+        <p>Donated blood supports patients through emergencies, operations, and ongoing treatment.</p>
+      </header>
+      <div class="education-grid">
+        <article class="education-card">
+          <span class="education-icon" aria-hidden="true">❤️</span>
+          <h3>One Donation Can Help Three Lives</h3>
+          <p>A whole-blood donation, commonly around 450 ml where local guidelines allow, may be separated into red cells, platelets, and plasma to help up to three patients.</p>
+        </article>
+        <article class="education-card">
+          <span class="education-icon" aria-hidden="true">🩸</span>
+          <h3>No Synthetic Substitute</h3>
+          <p>Blood cannot currently be manufactured. Patients depend on safe, voluntary donations from people who are eligible to donate.</p>
+        </article>
+        <article class="education-card">
+          <span class="education-icon" aria-hidden="true">⏱️</span>
+          <h3>Emergency Need, Every Day</h3>
+          <p>People may need blood at any time for trauma care, emergency surgery, childbirth complications, and other medical treatments.</p>
+        </article>
+      </div>
+      <p class="about-page-note">Donation volume and eligibility requirements vary by location and individual health. A licensed blood bank team determines eligibility and appropriate donation procedures.</p>
+    </section>
+
+    <section class="about-page-section" aria-labelledby="workflowHeading">
+      <header class="about-page-heading">
+        <span class="section-kicker">A simpler way to connect</span>
+        <h2 id="workflowHeading">Our Workflow &amp; Purpose</h2>
+        <p>Blood Bond helps people find relevant donor and request information in one community portal.</p>
+      </header>
+      <div class="purpose-grid">
+        <article class="purpose-card">
+          <span class="purpose-icon" aria-hidden="true">🧭</span>
+          <h3>Less Hospital Hunting</h3>
+          <p>Search registered donors by blood group and city instead of relying only on time-consuming, uncoordinated searches.</p>
+        </article>
+        <article class="purpose-card">
+          <span class="purpose-icon" aria-hidden="true">🤝</span>
+          <h3>Direct Community Connections</h3>
+          <p>Patients and donors can connect directly through the contact details provided with a request or donor registration.</p>
+        </article>
+        <article class="purpose-card">
+          <span class="purpose-icon" aria-hidden="true">⚡</span>
+          <h3>Matching Request Alerts</h3>
+          <p>When a matching donor registers, the portal can email the contact address on pending requests for that blood group.</p>
+        </article>
+      </div>
+      <p class="about-page-note">Blood Bond is a connection platform, not a blood bank or medical service. It does not verify availability or compatibility; confirm both with a licensed blood bank or healthcare professional before acting.</p>
+    </section>
+
+    <section class="about-page-section" aria-labelledby="pillarsHeading">
+      <header class="about-page-heading">
+        <span class="section-kicker">What guides us</span>
+        <h2 id="pillarsHeading">Our Core Pillars</h2>
+      </header>
+      <div class="pillars-grid">
+        <article class="about-pillar">
+          <span class="pillar-icon" aria-hidden="true">🫶</span>
+          <h3>100% Free Community Service</h3>
+          <p>Built to help the community connect without charging for the service.</p>
+        </article>
+        <article class="about-pillar">
+          <span class="pillar-icon" aria-hidden="true">🔔</span>
+          <h3>Instant Alerts</h3>
+          <p>Automated email notifications can help request contacts learn when a matching donor registers.</p>
+        </article>
+        <article class="about-pillar">
+          <span class="pillar-icon" aria-hidden="true">🔐</span>
+          <h3>Privacy Protection</h3>
+          <p>Contact details support direct connections. Share personal information carefully and only when appropriate.</p>
+        </article>
+        <article class="about-pillar">
+          <span class="pillar-icon" aria-hidden="true">✅</span>
+          <h3>Responsible Donor Network</h3>
+          <p>Registered donors can be discovered by blood group and city; clinical eligibility must be confirmed by donation professionals.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="about-footer-links" aria-label="Footer quick links">
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="find-donor.html">Find Donor</a>
+      <a href="donate.html">Donate Blood</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    Blood Donation Portal &copy; 2026 &mdash; Every drop counts.
+  </footer>
+</body>
+</html>

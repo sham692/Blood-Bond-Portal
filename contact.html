@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact the Blood Bond developer and emergency coordination team.">
+  <title>Contact Us | Blood Bond</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-page-main { padding-top: 42px; }
+    .contact-page-hero { margin-bottom: 34px; text-align: center; }
+    .contact-page-hero h1 { max-width: 820px; margin: 0 auto 12px; }
+    .contact-page-hero p { max-width: 700px; margin: 0 auto; }
+    .contact-page-section { padding: 34px 24px; }
+    .contact-profile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .contact-profile-card {
+      overflow: hidden;
+      background: rgba(255, 255, 255, .96);
+      border: 1px solid rgba(220, 53, 69, .22);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(142, 0, 0, .12);
+      transition: transform .24s ease, box-shadow .24s ease;
+    }
+    .contact-profile-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(142, 0, 0, .18);
+    }
+    .contact-profile-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 26px 24px;
+      color: var(--white);
+      background: linear-gradient(125deg, #d83a46 0%, #8e0000 100%);
+    }
+    .contact-profile-avatar {
+      flex: 0 0 58px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      color: var(--red-dark);
+      background: rgba(255, 255, 255, .96);
+      border: 3px solid rgba(255, 255, 255, .42);
+      border-radius: 50%;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .contact-profile-header h2 {
+      margin: 0 0 4px;
+      color: var(--white);
+      font-size: 22px;
+    }
+    .contact-profile-header p { margin: 0; color: #ffe6e8; font-size: 14px; }
+    .contact-profile-actions { display: grid; gap: 11px; padding: 22px 24px 26px; }
+    .contact-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 10px 14px;
+      border: 1px solid var(--red);
+      border-radius: 10px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: background .18s ease, transform .18s ease;
+    }
+    .contact-action:hover { transform: translateY(-1px); background: var(--red-dark); }
+    .contact-action.secondary { background: var(--white); color: var(--red-dark); }
+    .contact-action.secondary:hover { background: var(--red-light); }
+    .contact-action-icon { font-size: 17px; }
+    .contact-page-note {
+      max-width: 900px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+    @media (max-width: 680px) {
+      .contact-page-main { padding-top: 28px; }
+      .contact-profile-grid { grid-template-columns: 1fr; }
+      .contact-page-section { padding: 26px 16px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .contact-profile-card, .contact-action { transition: none; }
+      .contact-profile-card:hover, .contact-action:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html"><span class="drop"></span> Blood Donation Portal</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="register.html">Registration</a>
+        <a href="find-donor.html">Find Donor</a>
+        <a href="donate.html">Donate Blood</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active" aria-current="page">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-page-main">
+    <section class="hero contact-page-hero">
+      <span class="hero-eyebrow">Blood Bond team</span>
+      <h1>Contact Us &amp; Developer Team</h1>
+      <p>For technical assistance, project inquiries, or emergency support, get in touch with our team.</p>
+    </section>
+
+    <section class="contact-section contact-page-section" aria-label="Blood Bond developer and coordinator contacts">
+      <div class="contact-profile-grid">
+        <article class="contact-profile-card">
+          <header class="contact-profile-header">
+            <span class="contact-profile-avatar" aria-hidden="true">SC</span>
+            <div>
+              <h2>Sham Chavan</h2>
+              <p>Lead Developer &amp; Emergency Operations Coordinator</p>
+            </div>
+          </header>
+          <div class="contact-profile-actions">
+            <a class="contact-action" href="tel:9011067371">
+              <span class="contact-action-icon" aria-hidden="true">☎</span>
+              <span>Call +91 9011067371</span>
+            </a>
+            <a class="contact-action secondary" href="mailto:shamchavan4444@gmail.com">
+              <span class="contact-action-icon" aria-hidden="true">✉</span>
+              <span>Email shamchavan4444@gmail.com</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="contact-profile-card">
+          <header class="contact-profile-header">
+            <span class="contact-profile-avatar" aria-hidden="true">KT</span>
+            <div>
+              <h2>Krishna Takalkar</h2>
+              <p>Lead Developer &amp; Technical Lead</p>
+            </div>
+          </header>
+          <div class="contact-profile-actions">
+            <a class="contact-action" href="tel:7972723161">
+              <span class="contact-action-icon" aria-hidden="true">☎</span>
+              <span>Call +91 7972723161</span>
+            </a>
+            <a class="contact-action secondary" href="mailto:krishnatakalkar8@gmail.com">
+              <span class="contact-action-icon" aria-hidden="true">✉</span>
+              <span>Email krishnatakalkar8@gmail.com</span>
+            </a>
+          </div>
+        </article>
+      </div>
+      <p class="contact-page-note">For urgent medical needs, contact your local emergency services or a licensed blood bank. Blood Bond is a donor connection platform and does not provide medical care.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <nav class="about-footer-links" aria-label="Footer quick links">
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="find-donor.html">Find Donor</a>
+      <a href="donate.html">Donate Blood</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    Blood Donation Portal &copy; 2026 &mdash; Every drop counts.
+  </footer>
+</body>
+</html>

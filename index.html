@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Donation Portal | Donate Blood, Save Lives</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="drop"></span> Blood Donation Portal</a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="register.html">Registration</a>
+      <a href="find-donor.html">Find Donor</a>
+      <a href="donate.html">Donate Blood</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="nav-link admin-btn" href="admin.html">Admin</a>
+    </nav>
+  </div>
+  <div class="live-ticker-container" aria-label="Live emergency requests and donor updates">
+    <span class="ticker-badge">🚨 LIVE ALERTS</span>
+    <div class="ticker-window">
+      <div id="liveTickerTrack" class="ticker-track">
+        <span class="ticker-item">Loading verified requests and donor updates...</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero home-hero">
+    <span class="hero-eyebrow">Blood donors. Stronger communities.</span>
+    <h1>Connecting Blood Donors With Those In Need</h1>
+    <p>Every drop saves a life. Find blood donors near you or register to save someone today.</p>
+    <div class="hero-actions">
+      <a class="btn hero-primary" href="find-donor.html">Request Blood / Find Donor</a>
+      <a class="btn ghost" href="register.html">Register as a Donor</a>
+    </div>
+  </section>
+
+  <section class="impact-grid" aria-label="Blood Bond impact">
+    <div class="impact-card">
+      <span class="impact-icon" aria-hidden="true">🩸</span>
+      <div class="impact-value" id="impactDonors">—</div>
+      <div class="impact-label">Donors Registered</div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon" aria-hidden="true">❤️</span>
+      <div class="impact-value" id="impactFulfilled">—</div>
+      <div class="impact-label">Requests Fulfilled</div>
+    </div>
+    <div class="impact-card">
+      <span class="impact-icon" aria-hidden="true">📍</span>
+      <div class="impact-value" id="impactCities">—</div>
+      <div class="impact-label">Cities Covered</div>
+    </div>
+  </section>
+
+  <div class="card">
+    <h2>Blood Group Availability</h2>
+    <div class="table-wrap">
+      <table class="data">
+        <thead>
+          <tr><th>Blood Group</th><th>Donors</th><th>Blood Available (ml)</th></tr>
+        </thead>
+        <tbody id="availabilityBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <section class="home-section" aria-labelledby="helplinesHeading">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">Help is a call away</span>
+        <h2 id="helplinesHeading">24/7 Emergency Helplines</h2>
+      </div>
+    </div>
+    <div class="helpline-grid">
+      <article class="helpline-card">
+        <span class="helpline-icon" aria-hidden="true">🩸</span>
+        <h3>National Blood Helpline</h3>
+        <p>e-RaktKosh</p>
+        <a href="tel:1910">Call 1910</a>
+      </article>
+      <article class="helpline-card">
+        <span class="helpline-icon" aria-hidden="true">🚑</span>
+        <h3>Ambulance Service</h3>
+        <p>Emergency medical transport</p>
+        <a href="tel:108">Call 108</a>
+        <a href="tel:102">Call 102</a>
+      </article>
+      <article class="helpline-card">
+        <span class="helpline-icon" aria-hidden="true">🆘</span>
+        <h3>National Emergency</h3>
+        <p>All-in-one emergency number</p>
+        <a href="tel:112">Call 112</a>
+      </article>
+      <article class="helpline-card">
+        <span class="helpline-icon" aria-hidden="true">✚</span>
+        <h3>Red Cross Blood Bank</h3>
+        <p>Indian Red Cross Society</p>
+        <a href="tel:01123716441">Call 011-23716441</a>
+      </article>
+    </div>
+    <p class="section-disclaimer">Helpline availability and services may vary. For immediate medical emergencies, contact local emergency services.</p>
+  </section>
+
+  <section class="home-section" aria-labelledby="compatibilityHeading">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">Red cell compatibility guide</span>
+        <h2 id="compatibilityHeading">Who Can Donate to Whom?</h2>
+      </div>
+      <p class="section-intro">A quick guide for red blood cell transfusions</p>
+    </div>
+    <div class="compatibility-grid">
+      <article class="compatibility-card universal-donor">
+        <span class="badge green">Universal Donor</span>
+        <h3>O−</h3>
+        <p>Can donate red blood cells to all blood groups.</p>
+      </article>
+      <article class="compatibility-card universal-recipient">
+        <span class="badge">Universal Recipient</span>
+        <h3>AB+</h3>
+        <p>Can receive red blood cells from all blood groups.</p>
+      </article>
+    </div>
+    <div class="card compatibility-table-card">
+      <div class="table-wrap">
+        <table class="data compatibility-table">
+          <thead><tr><th>Donor Group</th><th>Can Donate Red Blood Cells To</th></tr></thead>
+          <tbody>
+            <tr><th>O−</th><td>O−, O+, A−, A+, B−, B+, AB−, AB+</td></tr>
+            <tr><th>O+</th><td>O+, A+, B+, AB+</td></tr>
+            <tr><th>A−</th><td>A−, A+, AB−, AB+</td></tr>
+            <tr><th>A+</th><td>A+, AB+</td></tr>
+            <tr><th>B−</th><td>B−, B+, AB−, AB+</td></tr>
+            <tr><th>B+</th><td>B+, AB+</td></tr>
+            <tr><th>AB−</th><td>AB−, AB+</td></tr>
+            <tr><th>AB+</th><td>AB+</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="section-disclaimer">Compatibility is a general guide for red blood cells only. A qualified clinician must confirm blood type and crossmatch before transfusion.</p>
+  </section>
+
+  <section class="home-section" aria-labelledby="eligibilityHeading">
+    <div class="section-heading">
+      <div>
+        <span class="section-kicker">A few checks before you donate</span>
+        <h2 id="eligibilityHeading">Donor Eligibility Checklist</h2>
+      </div>
+    </div>
+    <div class="eligibility-grid">
+      <article class="eligibility-card">
+        <span class="eligibility-icon" aria-hidden="true">🎂</span>
+        <h3>Age</h3>
+        <p>18–65 years</p>
+      </article>
+      <article class="eligibility-card">
+        <span class="eligibility-icon" aria-hidden="true">⚖️</span>
+        <h3>Weight</h3>
+        <p>Usually at least 45–50 kg, depending on local guidelines</p>
+      </article>
+      <article class="eligibility-card">
+        <span class="eligibility-icon" aria-hidden="true">🩺</span>
+        <h3>Health</h3>
+        <p>Normal blood pressure and pulse; hemoglobin typically above 12.5 g/dL</p>
+      </article>
+      <article class="eligibility-card">
+        <span class="eligibility-icon" aria-hidden="true">📅</span>
+        <h3>Donation Interval</h3>
+        <p>At least 3 months since your last whole-blood donation</p>
+      </article>
+    </div>
+    <p class="section-disclaimer">These are general guideposts, not a medical assessment. Eligibility varies by location and individual health; the blood bank team will make the final determination.</p>
+  </section>
+
+  <section class="requests-section" aria-labelledby="requestsHeading">
+    <div class="requests-heading">
+      <div>
+        <h2 id="requestsHeading">Emergency Blood Requests</h2>
+        <p class="page-sub">Contact the requester directly if you can help.</p>
+      </div>
+    </div>
+    <div id="requests-grid" class="request-grid" aria-live="polite">
+      <p class="empty">Loading emergency requests...</p>
+    </div>
+  </section>
+
+  <div class="grid cols-3">
+    <div class="card">
+      <h2>1. Register</h2>
+      <p class="page-sub">Add your details once and become part of our donor list.</p>
+      <a class="btn small" href="register.html">Register Now</a>
+    </div>
+    <div class="card">
+      <h2>2. Find a Donor</h2>
+      <p class="page-sub">Search donors by blood group and city in seconds.</p>
+      <a class="btn small" href="find-donor.html">Search Donors</a>
+    </div>
+    <div class="card">
+      <h2>3. Donate Blood</h2>
+      <p class="page-sub">Record a donation and it is added to the collection table.</p>
+      <a class="btn small" href="donate.html">Donate Blood</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  Blood Donation Portal &copy; 2026 &mdash; Every drop counts.
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

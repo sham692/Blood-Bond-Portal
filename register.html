@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donor Registration | Blood Donation Portal</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="drop"></span> Blood Donation Portal</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="register.html" class="active">Registration</a>
+      <a href="find-donor.html">Find Donor</a>
+      <a href="donate.html">Donate Blood</a>
+      <a href="admin.html">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <h1 class="page-title">Donor Registration</h1>
+  <p class="page-sub">Fill in your details to join the donor list. Fields marked * are required.</p>
+
+  <div id="notice" class="notice"></div>
+
+  <div class="card">
+    <form id="registerForm" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Full Name *</label>
+          <input type="text" id="name" required placeholder="e.g. Sham Kumar">
+        </div>
+        <div class="field">
+          <label for="bloodGroup">Blood Group *</label>
+          <select id="bloodGroup" required></select>
+        </div>
+        <div class="field">
+          <label for="age">Age *</label>
+          <input type="number" id="age" min="18" max="65" required placeholder="18 - 65">
+        </div>
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="phone">Mobile Number *</label>
+          <input type="tel" id="phone" required placeholder="10 digit number">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="name@example.com">
+        </div>
+        <div class="field">
+          <label for="city">City *</label>
+          <input type="text" id="city" required placeholder="e.g. Kochi">
+        </div>
+        <div class="field">
+          <label for="amountMl">How Much Blood Do You Want to Donate? (ml) *</label>
+          <select id="amountMl" required></select>
+          <small style="color:var(--muted);font-size:12px">A standard donation is 350 ml or 450 ml (450 ml = 1 unit).</small>
+        </div>
+        <div class="field hidden" id="customMlWrap">
+          <label for="customMl">Enter Quantity (ml) *</label>
+          <input type="number" id="customMl" min="100" max="600" step="10" placeholder="e.g. 300">
+        </div>
+        <div class="field">
+          <label for="lastDonation">Last Donation Date</label>
+          <input type="date" id="lastDonation">
+        </div>
+        <div class="field full">
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="House / Street / Area">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn">Register as Donor</button>
+        <button type="reset" class="btn ghost">Clear</button>
+      </div>
+    </form>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  Blood Donation Portal &copy; 2026 &mdash; Every drop counts.
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/register.js"></script>
+</body>
+</html>

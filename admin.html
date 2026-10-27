@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel | Blood Donation Portal</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html"><span class="drop"></span> Blood Donation Portal</a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="find-donor.html">Find Donor</a>
+      <a href="donate.html">Donate Blood</a>
+      <a href="admin.html" class="active">Admin</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= LOGIN ================= -->
+  <section id="loginView" class="admin-login-overlay" aria-labelledby="loginTitle">
+    <div class="admin-login-card">
+      <span class="admin-login-mark" aria-hidden="true">BB</span>
+      <h1 id="loginTitle" class="page-title">Admin Login</h1>
+      <p class="page-sub">Sign in to securely manage donors and emergency requests.</p>
+      <div id="loginNotice" class="notice" role="alert" aria-live="assertive"></div>
+      <form id="loginForm">
+        <div class="field">
+          <label for="username">Username</label>
+          <input type="text" id="username" required autocomplete="username" placeholder="Enter username">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" required autocomplete="current-password" placeholder="Enter password">
+        </div>
+        <button type="submit" class="btn admin-login-submit">Login</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= PANEL ================= -->
+  <section id="panelView" class="hidden">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div>
+        <h1 class="page-title" style="margin-bottom:0">Admin Panel</h1>
+        <p class="page-sub" style="margin:4px 0 0">Blood bank collection dashboard</p>
+      </div>
+      <button id="logoutBtn" class="btn ghost small" style="margin-left:auto">Logout</button>
+    </div>
+
+    <div id="panelNotice" class="notice" style="margin-top:18px"></div>
+
+    <div class="grid cols-3 admin-stat-grid" style="margin:4px 0 22px">
+      <div class="stat admin-stat"><div class="label">Total Donors Registered</div><div class="value" id="admDonors">0</div></div>
+      <div class="stat admin-stat"><div class="label">Pending Emergency Requests</div><div class="value" id="admPendingRequests">0</div></div>
+      <div class="stat admin-stat"><div class="label">Fulfilled Emergency Requests</div><div class="value" id="admFulfilledRequests">0</div></div>
+    </div>
+
+    <div class="card admin-card">
+      <h2>Emergency Blood Requests</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Patient Name</th><th>Blood Group</th><th>Units</th><th>Hospital</th>
+              <th>City</th><th>Contact</th><th>Urgency</th><th>Status</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="requestTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Blood group wise collection table -->
+    <div class="card admin-card">
+      <h2>Blood Group Wise Collection Table</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr>
+              <th>Blood Group</th>
+              <th>Registered Donors</th>
+              <th>Donations</th>
+              <th>Blood Collected (ml)</th>
+              <th>Stock Level</th>
+              <th>Last Collection</th>
+            </tr>
+          </thead>
+          <tbody id="groupTableBody"></tbody>
+          <tfoot id="groupTableFoot"></tfoot>
+        </table>
+      </div>
+    </div>
+
+    <!-- Add collection entry -->
+    <div class="card admin-card">
+      <h2>Add Collection Entry</h2>
+      <form id="collectionForm">
+        <div class="form-grid">
+          <div class="field">
+            <label for="cDonorName">Donor Name *</label>
+            <input type="text" id="cDonorName" required placeholder="Full name">
+          </div>
+          <div class="field">
+            <label for="cBloodGroup">Blood Group *</label>
+            <select id="cBloodGroup" required></select>
+          </div>
+          <div class="field">
+            <label for="cAmountMl">Quantity (ml) *</label>
+            <select id="cAmountMl" required></select>
+          </div>
+          <div class="field">
+            <label for="cDate">Date *</label>
+            <input type="date" id="cDate" required>
+          </div>
+          <div class="field">
+            <label for="cCity">City</label>
+            <input type="text" id="cCity" placeholder="City">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn">Add to Collection</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Donation records -->
+    <div class="card admin-card">
+      <h2>Blood Collection Records</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr><th>Date</th><th>Donor</th><th>Blood Group</th><th>Quantity (ml)</th><th>City</th><th>Camp / Hospital</th><th>Action</th></tr>
+          </thead>
+          <tbody id="donationTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Registered donors -->
+    <div class="card admin-card">
+      <h2>Donor Management</h2>
+      <div class="table-wrap">
+        <table class="data">
+          <thead>
+            <tr><th>Name</th><th>Blood Group</th><th>Units</th><th>City</th><th>Contact</th><th>Last Donation Date</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="donorTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card admin-card">
+      <h2>Data Management</h2>
+      <p class="page-sub">Records are stored in the application database. Clearing them cannot be undone.</p>
+      <button id="clearDataBtn" class="btn danger">Clear All Records</button>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  Blood Donation Portal &copy; 2026 &mdash; Admin area.
+</footer>
+
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
